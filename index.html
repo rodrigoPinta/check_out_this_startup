@@ -10,6 +10,7 @@
       font-family: Arial, sans-serif;
       background: #f4f4f7;
       color: #333;
+      transition: background 0.3s, color 0.3s;
     }
     nav {
       background: white;
@@ -18,6 +19,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: background 0.3s;
     }
     .logo {
       font-size: 1.5rem;
@@ -40,6 +42,46 @@
     .nav-links a:hover {
       color: #4f46e5;
     }
+
+    /* Toggle switch */
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .toggle-btn {
+      width: 45px;
+      height: 22px;
+      background: #ccc;
+      border-radius: 20px;
+      position: relative;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn::after {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 3px;
+      transition: transform 0.3s;
+    }
+
+    .toggle-btn.active {
+      background: #4f46e5;
+    }
+
+    .toggle-btn.active::after {
+      transform: translateX(22px);
+    }
+
     header {
       background: linear-gradient(135deg, rgba(79, 70, 229, 0.95), rgba(99, 102, 241, 0.95)), 
                   url('https://media.licdn.com/dms/image/v2/D4D12AQGaCe_MYvBY0g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1709193013911?e=2147483647&v=beta&t=x_Fg8wAZLIkdxjJXUwSqyGCYnhd-L2gqZlWQvw3Gx8k');
@@ -48,6 +90,7 @@
       padding: 60px 20px;
       text-align: center;
       color: white;
+      transition: filter 0.3s;
     }
     h1 {
       font-size: 3rem;
@@ -73,7 +116,7 @@
       border-radius: 20px;
       padding: 30px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s, color 0.3s, box-shadow 0.3s;
     }
     .product-card:hover {
       transform: translateY(-5px);
@@ -129,38 +172,68 @@
       text-align: center;
       padding: 30px;
       color: #666;
+      transition: color 0.3s;
     }
+
+    /* DARK MODE */
+    body.dark {
+      background: #0d0d0f;
+      color: #e5e5e5;
+    }
+    nav.dark {
+      background: #1a1a1d;
+      box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+    }
+    .nav-links a.dark-link {
+      color: #ddd !important;
+    }
+    header.dark {
+      filter: brightness(0.8);
+    }
+    .product-card.dark {
+      background: #1a1a1d;
+      box-shadow: 0 6px 20px rgba(255,255,255,0.08);
+      color: #ddd;
+    }
+    footer.dark {
+      color: #aaa;
+    }
+
   </style>
 </head>
+
 <body>
-<nav>
+
+<nav id="navbar">
   <div class="logo">Stack3 Labs AI Agents Suite</div>
-  <ul class="nav-links">
+
+  <ul class="nav-links" id="navLinks">
     <li><a href="#products">Products</a></li>
     <li><a href="#ai-products">AI Products</a></li>
     <li><a href="#contact">Contact Us</a></li>
   </ul>
+
+  <div class="toggle-container" onclick="toggleDarkMode()">
+    <span>🌙</span>
+    <div id="themeToggle" class="toggle-btn"></div>
+  </div>
 </nav>
-<header>
+
+<header id="header">
   <h1>Think smart. Think intelligently.</h1>
   <p class="subtitle">We build small and mid AI-driven agents for finance, web3, compliance, and whatever you need!</p>
 </header>
+
 <div class="container">
   <div class="products">
-    
+
     <!-- Expense Analyzer -->
     <div class="product-card">
       <div class="product-header">
-        <img 
-  src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agenteum.png"
-  alt="Robot"
-  width="70"
-/>
+        <img src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agenteum.png" alt="Robot" width="70"/>
         <h2 class="product-title">Expense Analyzer</h2>
       </div>
-      <p class="product-description">
-        AI-powered anomaly detection for finance, auditing, and compliance teams. Automatically identifies suspicious patterns in expense data.
-      </p>
+      <p class="product-description">AI-powered anomaly detection for finance, auditing, and compliance teams. Automatically identifies suspicious patterns in expense data.</p>
       <ul class="features-list">
         <li>🔍 Duplicate Invoice Detection</li>
         <li>📊 Vendor Anomaly Analysis</li>
@@ -176,16 +249,10 @@
     <!-- Web3 Analyzer -->
     <div class="product-card">
       <div class="product-header">
-        <img 
-  src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agentedois.png"
-  alt="Robot"
-  width="70"
-/>
+        <img src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agentedois.png" alt="Robot" width="70"/>
         <h2 class="product-title">Web3 Analyzer</h2>
       </div>
-      <p class="product-description">
-        Blockchain transaction auditing and smart contract analysis. Detect anomalies, trace funds, and ensure compliance in decentralized ecosystems.
-      </p>
+      <p class="product-description">Blockchain transaction auditing and smart contract analysis. Detect anomalies, trace funds, and ensure compliance in decentralized ecosystems.</p>
       <ul class="features-list">
         <li>⛓️ Transaction Pattern Analysis</li>
         <li>💰 Wallet Behavior Monitoring</li>
@@ -201,15 +268,10 @@
     <!-- FS Reviewer -->
     <div class="product-card">
       <div class="product-header">
-<img 
-  src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agentetres.png"
-  alt="Robot"
-  width="70"
-/>        <h2 class="product-title">FS Reviewer</h2>
+        <img src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agentetres.png" alt="Robot" width="70"/>
+        <h2 class="product-title">FS Reviewer</h2>
       </div>
-      <p class="product-description">
-        Financial Statement intelligent review powered by LLMs. Automate analysis, identify inconsistencies, and ensure accounting standard compliance.
-      </p>
+      <p class="product-description">Financial Statement intelligent review powered by LLMs. Automate analysis, identify inconsistencies, and ensure accounting standard compliance.</p>
       <ul class="features-list">
         <li>📋 Automated Statement Analysis</li>
         <li>🔎 Ratio & Trend Detection</li>
@@ -225,15 +287,10 @@
     <!-- Insurance Agent -->
     <div class="product-card">
       <div class="product-header">
-<img 
-  src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agentequatro.png"
-  alt="Robot"
-  width="70"
-/>        <h2 class="product-title">Insurance Agent</h2>
+        <img src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agentequatro.png" alt="Robot" width="70"/>
+        <h2 class="product-title">Insurance Agent</h2>
       </div>
-      <p class="product-description">
-        AI-powered insurance claim processing and policy analysis. Automate underwriting, detect fraud, and streamline customer service.
-      </p>
+      <p class="product-description">AI-powered insurance claim processing and policy analysis. Automate underwriting, detect fraud, and streamline customer service.</p>
       <ul class="features-list">
         <li>📋 Automated Claim Processing</li>
         <li>🔍 Fraud Detection & Prevention</li>
@@ -246,19 +303,13 @@
       <a href="#" class="cta-button">Learn More</a>
     </div>
 
-    <!-- AI Social Media Post -->
+    <!-- Social Media Agent -->
     <div class="product-card">
       <div class="product-header">
-<img 
-  src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agentecinco.png"
-  alt="Robot"
-  width="70"
-/>
+        <img src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agentecinco.png" alt="Robot" width="70"/>
         <h2 class="product-title">AI Social Media Post</h2>
       </div>
-      <p class="product-description">
-        Intelligent content creation and social media management. Generate engaging posts, schedule campaigns, and analyze performance metrics.
-      </p>
+      <p class="product-description">Intelligent content creation and social media management. Generate engaging posts, schedule campaigns, and analyze performance metrics.</p>
       <ul class="features-list">
         <li>✍️ AI Content Generation</li>
         <li>📅 Smart Scheduling</li>
@@ -274,15 +325,10 @@
     <!-- Web3 Prices -->
     <div class="product-card">
       <div class="product-header">
-<img 
-  src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agenteseis.png"
-  alt="Robot"
-  width="70"
-/>        <h2 class="product-title">Web3 Prices</h2>
+        <img src="https://raw.githubusercontent.com/rodrigoPinta/check_out_this_startup/main/agenteseis.png" alt="Robot" width="70"/>
+        <h2 class="product-title">Web3 Prices</h2>
       </div>
-      <p class="product-description">
-        Real-time cryptocurrency and NFT price tracking with predictive analytics. Monitor markets, set alerts, and make data-driven decisions.
-      </p>
+      <p class="product-description">Real-time cryptocurrency and NFT price tracking with predictive analytics. Monitor markets, set alerts, and make data-driven decisions.</p>
       <ul class="features-list">
         <li>💹 Real-time Price Tracking</li>
         <li>🔔 Custom Price Alerts</li>
@@ -297,8 +343,45 @@
 
   </div>
 </div>
-<footer>
+
+<footer id="footer">
   AI Agents Suite © 2025 — Stack3 Labs — Powered by Advanced AI & Machine Learning
 </footer>
+
+<script>
+  // Restore theme on load
+  document.addEventListener("DOMContentLoaded", () => {
+    const dark = localStorage.getItem("darkMode") === "true";
+    if (dark) enableDarkMode();
+  });
+
+  function toggleDarkMode() {
+    const darkEnabled = document.body.classList.toggle("dark");
+
+    document.getElementById("navbar").classList.toggle("dark");
+    document.getElementById("header").classList.toggle("dark");
+    document.getElementById("footer").classList.toggle("dark");
+
+    document.querySelectorAll(".product-card").forEach(c => c.classList.toggle("dark"));
+    document.querySelectorAll(".nav-links a").forEach(a => a.classList.toggle("dark-link"));
+
+    document.getElementById("themeToggle").classList.toggle("active");
+
+    localStorage.setItem("darkMode", darkEnabled);
+  }
+
+  function enableDarkMode() {
+    document.body.classList.add("dark");
+    document.getElementById("navbar").classList.add("dark");
+    document.getElementById("header").classList.add("dark");
+    document.getElementById("footer").classList.add("dark");
+
+    document.querySelectorAll(".product-card").forEach(c => c.classList.add("dark"));
+    document.querySelectorAll(".nav-links a").forEach(a => a.classList.add("dark-link"));
+
+    document.getElementById("themeToggle").classList.add("active");
+  }
+</script>
+
 </body>
 </html>
