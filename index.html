@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agents Suite — Intelligent Analysis Tools</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f7;
+      color: #333;
+    }
+    nav {
+      background: white;
+      padding: 15px 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4f46e5;
+    }
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #4f46e5;
+    }
+    header {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.95), rgba(99, 102, 241, 0.95)), 
+                  url('https://media.licdn.com/dms/image/v2/D4D12AQGaCe_MYvBY0g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1709193013911?e=2147483647&v=beta&t=x_Fg8wAZLIkdxjJXUwSqyGCYnhd-L2gqZlWQvw3Gx8k');
+      background-size: cover;
+      background-position: center;
+      padding: 60px 20px;
+      text-align: center;
+      color: white;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    p.subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .product-header img {
+      width: 60px;
+      height: 60px;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
+    }
+    .product-title {
+      font-size: 1.75rem;
+      color: #4f46e5;
+      margin: 0;
+    }
+    .product-description {
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .features-list {
+      list-style: none;
+      padding: 0;
+    }
+    .features-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95rem;
+    }
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: opacity 0.3s;
+    }
+    .cta-button:hover {
+      opacity: 0.9;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo">Stack3 Labs</div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#ai-products">AI Products</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+</nav>
+<header>
+  <h1>AI Agents Suite</h1>
+  <p class="subtitle">We build AI-driven agents for finance, web3, compliance, and whatever you need!</p>
+</header>
+<div class="container">
+  <div class="products">
+    
+    <!-- Expense Analyzer -->
+    <div class="product-card">
+      <div class="product-header">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8zM18zZF9yZW5kZXJfb2ZfYV9jdXRlX3JvYm90X2hvbGRpbmdfYV9tYWduaWZ5aV83ZmQzNTFiMi05ZjRhLTQxMTktYjE1NC0yMTEwNjMwOTMxMjdfMS5qcGc.jpg" alt="Expense Analyzer Robot" />
+        <h2 class="product-title">Expense Analyzer</h2>
+      </div>
+      <p class="product-description">
+        AI-powered anomaly detection for finance, auditing, and compliance teams. Automatically identifies suspicious patterns in expense data.
+      </p>
+      <ul class="features-list">
+        <li>🔍 Duplicate Invoice Detection</li>
+        <li>📊 Vendor Anomaly Analysis</li>
+        <li>📈 GL Trend Analytics</li>
+        <li>⚠️ Missing Records Detection</li>
+        <li>🧠 AI Comment Analysis</li>
+        <li>📏 Benford's Law Validation</li>
+        <li>⏱️ Cut-off Consistency Check</li>
+      </ul>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <!-- Web3 Analyzer -->
+    <div class="product-card">
+      <div class="product-header">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8zOV9waG90b19vZl8zZF9jdXRlX3JvYm90X2NoYXJhY3Rlcl93aGl0ZV9iYWNrZ18yYWM0YTQzOS1mZDY3LTQ4MGMtOTQ4MS04YzRjYjM3MGM0MDBfMS5qcGc.jpg" alt="Web3 Analyzer Robot" />
+        <h2 class="product-title">Web3 Analyzer</h2>
+      </div>
+      <p class="product-description">
+        Blockchain transaction auditing and smart contract analysis. Detect anomalies, trace funds, and ensure compliance in decentralized ecosystems.
+      </p>
+      <ul class="features-list">
+        <li>⛓️ Transaction Pattern Analysis</li>
+        <li>💰 Wallet Behavior Monitoring</li>
+        <li>🔐 Smart Contract Audit</li>
+        <li>🌐 Cross-chain Tracking</li>
+        <li>🚨 Fraud Detection Alerts</li>
+        <li>📊 Gas Fee Optimization</li>
+        <li>🎯 Compliance Reporting</li>
+      </ul>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <!-- FS Reviewer -->
+    <div class="product-card">
+      <div class="product-header">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8zOV9waG90b19vZl8zZF9jdXRlX3JvYm90X2NoYXJhY3Rlcl93aXRoX2FfbWFnX2RlY2M5ZjQyLWE0YTgtNGY3Mi1hMDk0LWNjNzViOGUyOGQwOV8xLmpwZw.jpg" alt="FS Reviewer Robot" />
+        <h2 class="product-title">FS Reviewer</h2>
+      </div>
+      <p class="product-description">
+        Financial Statement intelligent review powered by LLMs. Automate analysis, identify inconsistencies, and ensure accounting standard compliance.
+      </p>
+      <ul class="features-list">
+        <li>📋 Automated Statement Analysis</li>
+        <li>🔎 Ratio & Trend Detection</li>
+        <li>✅ GAAP/IFRS Compliance Check</li>
+        <li>📝 Footnote Intelligence</li>
+        <li>⚖️ Materiality Assessment</li>
+        <li>🔄 Period-over-Period Comparison</li>
+        <li>🤖 Natural Language Insights</li>
+      </ul>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <!-- Insurance Agent -->
+    <div class="product-card">
+      <div class="product-header">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8zOV9waG90b19vZl8zZF9jdXRlX3JvYm90X2NoYXJhY3Rlcl93aGl0ZV9iYWNrZ185Y2JkYTcwYS1lOTYzLTQxODktOWEyNy0zZDRjMjFjMWZmNDVfMS5qcGc.jpg" alt="Insurance Agent Robot" />
+        <h2 class="product-title">Insurance Agent</h2>
+      </div>
+      <p class="product-description">
+        AI-powered insurance claim processing and policy analysis. Automate underwriting, detect fraud, and streamline customer service.
+      </p>
+      <ul class="features-list">
+        <li>📋 Automated Claim Processing</li>
+        <li>🔍 Fraud Detection & Prevention</li>
+        <li>📊 Risk Assessment Analysis</li>
+        <li>💬 Customer Query Automation</li>
+        <li>📄 Policy Document Review</li>
+        <li>⚡ Fast Quote Generation</li>
+        <li>🎯 Personalized Recommendations</li>
+      </ul>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <!-- AI Social Media Post -->
+    <div class="product-card">
+      <div class="product-header">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8zOV9waG90b19vZl8zZF9jdXRlX3JvYm90X2NoYXJhY3Rlcl93aXRoX2hlYWRfYjJmMjY0ODAtYjYxNy00Mjk0LThkZDMtNmY1MzNlMTZlMTIwXzEuanBn.jpg" alt="Social Media Robot" />
+        <h2 class="product-title">AI Social Media Post</h2>
+      </div>
+      <p class="product-description">
+        Intelligent content creation and social media management. Generate engaging posts, schedule campaigns, and analyze performance metrics.
+      </p>
+      <ul class="features-list">
+        <li>✍️ AI Content Generation</li>
+        <li>📅 Smart Scheduling</li>
+        <li>🎨 Image & Caption Pairing</li>
+        <li>📈 Performance Analytics</li>
+        <li>🎯 Audience Targeting</li>
+        <li>💡 Trending Topic Alerts</li>
+        <li>🔄 Multi-Platform Publishing</li>
+      </ul>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+    <!-- Web3 Prices -->
+    <div class="product-card">
+      <div class="product-header">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8zOV9waG90b19vZl8zZF9jdXRlX3JvYm90X2NoYXJhY3Rlcl93aXRoX2hlYWRfM2ZmMDI5NzMtOWRmNy00YWIzLWExNjgtZTFiNWQ4ZjY5YTJlXzEuanBn.jpg" alt="Web3 Prices Robot" />
+        <h2 class="product-title">Web3 Prices</h2>
+      </div>
+      <p class="product-description">
+        Real-time cryptocurrency and NFT price tracking with predictive analytics. Monitor markets, set alerts, and make data-driven decisions.
+      </p>
+      <ul class="features-list">
+        <li>💹 Real-time Price Tracking</li>
+        <li>🔔 Custom Price Alerts</li>
+        <li>📊 Market Trend Analysis</li>
+        <li>🎨 NFT Floor Price Monitor</li>
+        <li>🤖 AI Price Predictions</li>
+        <li>📉 Portfolio Performance</li>
+        <li>🌐 Multi-Exchange Data</li>
+      </ul>
+      <a href="#" class="cta-button">Learn More</a>
+    </div>
+
+  </div>
+</div>
+<footer>
+  AI Agents Suite © 2025 — Stack3 Labs — Powered by Advanced AI & Machine Learning
+</footer>
+</body>
+</html>
